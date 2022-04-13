@@ -1,19 +1,15 @@
 package com.CQCMP.CQCMP.Services;
 
-import com.CQCMP.CQCMP.Dto.AddRoomDto;
-import com.CQCMP.CQCMP.Dto.AddTestDto;
-import com.CQCMP.CQCMP.Dto.AllocateRoomDto;
-import com.CQCMP.CQCMP.Dto.AuthRequest;
+import com.CQCMP.CQCMP.Dto.*;
 import com.CQCMP.CQCMP.entity.Admin;
 import com.CQCMP.CQCMP.entity.Allocation;
 import com.CQCMP.CQCMP.entity.Rooms;
 import com.CQCMP.CQCMP.entity.Test;
-import com.CQCMP.CQCMP.repo.addRoom_repo;
-import com.CQCMP.CQCMP.repo.addTest_repo;
-import com.CQCMP.CQCMP.repo.adminLogin_repo;
-import com.CQCMP.CQCMP.repo.allocateRoom_repo;
+import com.CQCMP.CQCMP.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CQCMPService {
@@ -28,6 +24,9 @@ public class CQCMPService {
 
     @Autowired
     private addRoom_repo addroom_repo;
+
+    @Autowired
+    private GetRooms_repo getRooms_repo;
 
     @Autowired
     private allocateRoom_repo allocateroom_repo;
@@ -129,6 +128,40 @@ public class CQCMPService {
             return null;
         }
 
+    }
+
+    public String deallocateRoom(DeallocateRoom_Dto deallocateRoomDto){
+
+        String room_id= deallocateRoomDto.getRoom_id();
+        //We have to check whether the admin is adding or someone else is adding the data
+        Allocation alloc=allocateroom_repo.getExistingAllocation(room_id,"1");
+        if(alloc!=null){
+            //System.out.println(room);
+            allocateroom_repo.updateRoom(deallocateRoomDto.getRoom_id(),1);
+            return "Room deallocation successful";
+        }
+        else{
+            return "Room is already free";
+        }
+    }
+
+    public List<Rooms> getRooms(int free){
+
+        List<Rooms> roomsList=getRooms_repo.getRooms(free);
+        return roomsList;
+    }
+
+    public List<Allocation> getAllocations(){
+
+        List<Allocation> allocationList=allocateroom_repo.getAllocations();
+        return allocationList;
+    }
+
+    public List<Test> getPositiveStudents(){
+
+        String result="+VE";
+        List<Test> positiveStudentList=addtest_repo.getPositives(result);
+        return positiveStudentList;
     }
 
     public long generateID(){
