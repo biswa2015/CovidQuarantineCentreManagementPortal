@@ -10,9 +10,18 @@ import javax.persistence.*;
 public class Students {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String student_id;
+
+    @Column(name="emailID")
     private String email_id;
+
+    @Column(name="contact")
     private String contact;
+
+    @Column(name="roll_num")
     private String rollNum;
+
+    @Column(name="sname")
+    private String StudentName;
 }

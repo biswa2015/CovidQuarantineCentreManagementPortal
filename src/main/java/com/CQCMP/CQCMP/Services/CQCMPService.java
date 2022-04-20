@@ -1,10 +1,7 @@
 package com.CQCMP.CQCMP.Services;
 
 import com.CQCMP.CQCMP.Dto.*;
-import com.CQCMP.CQCMP.entity.Admin;
-import com.CQCMP.CQCMP.entity.Allocation;
-import com.CQCMP.CQCMP.entity.Rooms;
-import com.CQCMP.CQCMP.entity.Test;
+import com.CQCMP.CQCMP.entity.*;
 import com.CQCMP.CQCMP.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +21,9 @@ public class CQCMPService {
 
     @Autowired
     private addRoom_repo addroom_repo;
+
+    @Autowired
+    private AddMember_repo addMember_repo;
 
     @Autowired
     private GetRooms_repo getRooms_repo;
@@ -71,11 +71,35 @@ public class CQCMPService {
             room1.setRoomNum(addroomDto1.getRoomNum());
             room1.setFloorNum(addroomDto1.getFloorNum());
             room1.setFreeRoom(addroomDto1.getFreeRoom());
+            room1.setFreeRoom(1);
             long id=generateID();
             room1.setRoom_id(String.valueOf(id));
             addroom_repo.save(room1);
 
             return "Room added successfully";
+        }
+        else{
+            return null;
+        }
+
+    }
+
+    public String addMember(AddMember addMember1){
+
+        String email = addMember1.getSEmail();
+
+        Students student=addMember_repo.getStudentByEmail(email,addMember1.getSRoll(),addMember1.getSContact());
+        if(student==null){
+            Students std = new Students();
+            std.setContact(addMember1.getSContact());
+           std.setEmail_id(addMember1.getSEmail());
+           std.setStudentName(addMember1.getSName());
+           std.setRollNum(addMember1.getSRoll());
+            long id=generateID();
+            std.setStudent_id(String.valueOf(id));
+            addMember_repo.save(std);
+
+            return "Student added successfully";
         }
         else{
             return null;

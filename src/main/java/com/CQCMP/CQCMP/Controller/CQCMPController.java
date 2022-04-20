@@ -43,6 +43,17 @@ public class CQCMPController {
         return ResponseEntity.ok(msg);
     }
 
+    @PostMapping(value="/add-member")
+    public ResponseEntity<?> addMember(@RequestBody AddMember addMember){
+        System.out.println(addMember.getSEmail());
+        String msg= cqcmpService.addMember(addMember);
+        if(msg==null){
+            ResponseEntity<String> response=new ResponseEntity<>("Student already exists ",HttpStatus.INTERNAL_SERVER_ERROR);
+            return response;
+        }
+        return ResponseEntity.ok(msg);
+    }
+
     @PostMapping(value="/add-test")
     public ResponseEntity<?> addTest(@RequestBody AddTestDto addtestdto){
         String msg= cqcmpService.addTest(addtestdto);
