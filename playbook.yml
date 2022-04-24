@@ -5,4 +5,4 @@
   remote_user: priyanko-ubuntu-20
   tasks:
     - name: pull image
-      command: docker pull priyanko27/CQCMP:latest
+      command: docker pull priyanko27/cqcmp:latest
