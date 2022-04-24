@@ -1,0 +1,8 @@
+---
+- name: Push docker image to dockerhub
+  hosts: localhost
+  connection: local
+  remote_user: priyanko-ubuntu-20
+  tasks:
+    - name: pull image
+      command: docker pull priyanko27/CQCMP:latest
