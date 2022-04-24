@@ -120,6 +120,7 @@ public class CQCMPService {
             test1.setResult(addtestDto1.getResult());
             long id=generateID();
             test1.setTest_id(String.valueOf(id));
+            test1.setTestDate(java.time.LocalDate.now().toString());
             addtest_repo.save(test1);
 
             return "Test record added successfully";
@@ -141,6 +142,9 @@ public class CQCMPService {
             Allocation alloc1 = new Allocation();
             alloc1.setStudent_id(allocateRoomDto.getStudent_id());
             alloc1.setRoom_id(allocateRoomDto.getRoom_id());
+            alloc1.setStartDate(java.time.LocalDate.now().toString());
+            alloc1.setEndDate(null);
+            alloc1.setVacated(0);
             long id=generateID();
             alloc1.setAlloc_id(String.valueOf(id));
             allocateroom_repo.save(alloc1);
@@ -162,6 +166,7 @@ public class CQCMPService {
         if(alloc!=null){
             //System.out.println(room);
             allocateroom_repo.updateRoom(deallocateRoomDto.getRoom_id(),1);
+            allocateroom_repo.updateAllocation(deallocateRoomDto.getRoom_id(),java.time.LocalDate.now().toString());
             return "Room deallocation successful";
         }
         else{

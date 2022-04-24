@@ -17,4 +17,7 @@ public class Test {
 
     @Column(name="result")
     private String result;
+
+    @Column(name="testDate")
+    private String testDate;
 }

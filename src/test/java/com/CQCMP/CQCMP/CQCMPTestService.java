@@ -72,8 +72,8 @@ public class CQCMPTestService {
         return id;
     }
 
-    //@Test
-    public String loginAdmin(AuthRequest authRequest){
+    @org.junit.jupiter.api.Test
+    public String testloginAdmin(AuthRequest authRequest){
         Admin admin=adminlogin_repo.getAdminByEmail(authRequest.getUsername());
         if(admin!=null){
             boolean isMatch=authRequest.getPassword().equals(admin.getPassword());
@@ -90,7 +90,7 @@ public class CQCMPTestService {
         }
     }
 
-    //Test
+    @org.junit.jupiter.api.Test
     public String addRoom(AddRoomDto addroomDto1){
 
         int roomNum = addroomDto1.getRoomNum();
@@ -115,6 +115,7 @@ public class CQCMPTestService {
 
     }
 
+    @org.junit.jupiter.api.Test
     public String addMember(AddMember addMember1){
 
         String email = addMember1.getSEmail();
@@ -138,6 +139,7 @@ public class CQCMPTestService {
 
     }
 
+    @org.junit.jupiter.api.Test
     public String addTest(AddTestDto addtestDto1){
 
         String student_id = addtestDto1.getStudent_id();
@@ -161,6 +163,7 @@ public class CQCMPTestService {
 
     }
 
+    @org.junit.jupiter.api.Test
     public String allocateRoom(AllocateRoomDto allocateRoomDto){
 
         String student_id = allocateRoomDto.getStudent_id();
@@ -185,6 +188,7 @@ public class CQCMPTestService {
 
     }
 
+    @org.junit.jupiter.api.Test
     public String deallocateRoom(DeallocateRoom_Dto deallocateRoomDto){
 
         String room_id= deallocateRoomDto.getRoom_id();
@@ -200,18 +204,21 @@ public class CQCMPTestService {
         }
     }
 
+    @org.junit.jupiter.api.Test
     public List<Rooms> getRooms(int free){
 
         List<Rooms> roomsList=getRooms_repo.getRooms(free);
         return roomsList;
     }
 
+    @org.junit.jupiter.api.Test
     public List<Allocation> getAllocations(){
 
         List<Allocation> allocationList=allocateroom_repo.getAllocations();
         return allocationList;
     }
 
+    @org.junit.jupiter.api.Test
     public List<Test> getPositiveStudents(){
 
         String result="+VE";
