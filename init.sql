@@ -1,3 +1,5 @@
+create database CQCMP;
+
 use CQCMP;
 
 create table admin_info(
