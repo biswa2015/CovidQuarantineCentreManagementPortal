@@ -14,6 +14,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,22 +22,22 @@ public class CQCMPTestService {
 
     //@Mock
     private adminLogin_repo adminlogin_repo;
-    @Autowired
+
     private JwtService jwtService;
 
-    @Autowired
+
     private addTest_repo addtest_repo;
 
-    @Autowired
+
     private addRoom_repo addroom_repo;
 
-    @Autowired
+
     private AddMember_repo addMember_repo;
 
-    @Autowired
+
     private GetRooms_repo getRooms_repo;
 
-    @Autowired
+
     private allocateRoom_repo allocateroom_repo;
 
     CQCMPService service=new CQCMPService();
@@ -47,7 +48,13 @@ public class CQCMPTestService {
     public void setup()
     {
         adminlogin_repo=Mockito.mock(adminLogin_repo.class);
+        jwtService=Mockito.mock(JwtService.class);
+        addroom_repo=Mockito.mock(addRoom_repo.class);
+        getRooms_repo=Mockito.mock(GetRooms_repo.class);
         ReflectionTestUtils.setField(service,"adminlogin_repo",adminlogin_repo);
+        ReflectionTestUtils.setField(service,"jwtService",jwtService);
+        ReflectionTestUtils.setField(service,"addroom_repo",addroom_repo);
+        ReflectionTestUtils.setField(service,"getRooms_repo",getRooms_repo);
     }
     @org.junit.jupiter.api.Test
     public void testGetAdminById(){
@@ -73,45 +80,57 @@ public class CQCMPTestService {
     }
 
     @org.junit.jupiter.api.Test
-    public String testloginAdmin(AuthRequest authRequest){
-        Admin admin=adminlogin_repo.getAdminByEmail(authRequest.getUsername());
-        if(admin!=null){
-            boolean isMatch=authRequest.getPassword().equals(admin.getPassword());
-            if(isMatch){
-                String token=jwtService.createToken(admin.getAdminID());
-                return token;
-            }
-            else{
-                return null;
-            }
-        }
-        else{
-            return null;
-        }
+    public void testloginAdmin(){
+        Admin admin=new Admin();
+        admin.setName("admin");
+        admin.setAdminID("adminId");
+        admin.setPassword("password");
+        Mockito.when(adminlogin_repo.getAdminByEmail(ArgumentMatchers.anyString())).thenReturn(admin);
+        Mockito.when(jwtService.createToken(ArgumentMatchers.anyString())).thenReturn("token");
+        AuthRequest authRequest=new AuthRequest();
+        authRequest.setPassword("password");
+        authRequest.setUsername("Admin");
+        String res=service.loginAdmin(authRequest);
+        Assertions.assertEquals("token",res);
+//        if(admin!=null){
+//            boolean isMatch=authRequest.getPassword().equals(admin.getPassword());
+//            if(isMatch){
+//                String token=jwtService.createToken(admin.getAdminID());
+//                return token;
+//            }
+//            else{
+//                return null;
+//            }
+//        }
+//        else{
+//            return null;
+//        }
     }
 
     @org.junit.jupiter.api.Test
-    public String addRoom(AddRoomDto addroomDto1){
+    public void addRoom(){
 
-        int roomNum = addroomDto1.getRoomNum();
-        int floorNum=addroomDto1.getFloorNum();
-        //We have to check whether the admin is adding or someone else is adding the data
-        Rooms room=addroom_repo.getRoomsByRoomAndFloor(roomNum,floorNum);
-        if(room==null){
-            Rooms room1 = new Rooms();
-            room1.setRoomNum(addroomDto1.getRoomNum());
-            room1.setFloorNum(addroomDto1.getFloorNum());
-            room1.setFreeRoom(addroomDto1.getFreeRoom());
-            room1.setFreeRoom(1);
-            long id=generateID();
-            room1.setRoom_id(String.valueOf(id));
-            addroom_repo.save(room1);
+        AddRoomDto addRoomDto=new AddRoomDto();
+        addRoomDto.setRoomNum(100);
+        addRoomDto.setFloorNum(1);
 
-            return "Room added successfully";
-        }
-        else{
-            return null;
-        }
+        Mockito.when(addroom_repo.getRoomsByRoomAndFloor(ArgumentMatchers.anyInt(),ArgumentMatchers.anyInt())).thenReturn(null);
+        String res=service.addRoom(addRoomDto);
+//        if(room==null){
+//            Rooms room1 = new Rooms();
+//            room1.setRoomNum(addroomDto1.getRoomNum());
+//            room1.setFloorNum(addroomDto1.getFloorNum());
+//            room1.setFreeRoom(addroomDto1.getFreeRoom());
+//            room1.setFreeRoom(1);
+//            long id=generateID();
+//            room1.setRoom_id(String.valueOf(id));
+//            addroom_repo.save(room1);
+//
+//            return "Room added successfully";
+//        }
+//        else{
+//            return null;
+//        }
 
     }
 
@@ -205,10 +224,28 @@ public class CQCMPTestService {
     }
 
     @org.junit.jupiter.api.Test
-    public List<Rooms> getRooms(int free){
+    public void testgetRooms(){
 
-        List<Rooms> roomsList=getRooms_repo.getRooms(free);
-        return roomsList;
+        List<Rooms> roomsList=new ArrayList<>();
+        Rooms room1=new Rooms();
+        room1.setRoom_id("R001");
+        room1.setRoomNum(100);
+        room1.setFloorNum(1);
+        room1.setFreeRoom(1);
+
+        Rooms room2=new Rooms();
+        room2.setRoom_id("R002");
+        room2.setRoomNum(200);
+        room2.setFloorNum(2);
+        room2.setFreeRoom(1);
+        roomsList.add(room1);
+        roomsList.add(room2);
+
+        Mockito.when(getRooms_repo.getRooms(ArgumentMatchers.anyInt())).thenReturn(roomsList);
+        List<Rooms> res=service.getRooms(1);
+        Assertions.assertEquals(2,roomsList.size());
+        //List<Rooms> roomsList=getRooms_repo.getRooms(free);
+        //return roomsList;
     }
 
     @org.junit.jupiter.api.Test
