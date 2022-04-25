@@ -1,12 +1,12 @@
 version: '3'
 services:
 
-  cqcmp-mysql2:
+  cqcmp-mysql3:
     image: "mysql:latest"
-    container_name: cqcmp-mysql2
+    container_name: cqcmp-mysql3
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init-script.sql
-      - mysql-data:/var/lib/mysql/data2
+      - mysql-data:/var/lib/mysql/data3
     ports:
       - 3306:3306
     environment:
@@ -17,13 +17,13 @@ services:
 
   cqcmp-app2:
     image: "priyanko27/cqcmp:latest"
-    container_name: cqcmp-app2
+    container_name: cqcmp-app3
     environment:
-      - DB_SERVER=cqcmp-mysql2
+      - DB_SERVER=cqcmp-mysql3
     ports:
       - 8095:8095
     links:
-      - cqcmp-mysql2
+      - cqcmp-mysql3
 
   #kanban-ui:
   #  build: ./kanban-ui
