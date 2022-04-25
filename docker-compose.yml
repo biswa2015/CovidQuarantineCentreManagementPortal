@@ -13,6 +13,7 @@ services:
       - MYSQL_DB:CQCMP
       - MYSQL_USER:cqcmp_user
       - MYSQL_PASSWORD:cqcmp_password
+      - MYSQL_ROOT_PASSWORD: password
 
   cqcmp-app:
     image: "priyanko27/cqcmp:latest"
