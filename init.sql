@@ -40,6 +40,8 @@ create table allocation(
     constraint PRIMARY KEY(alloc_id)
 );
 
+insert into admin_info values ('AD001','a@gmail.com','Priyanko','admin123');
+
 alter table rooms add isFree int;
 
 alter table tests add constraint fk_test FOREIGN KEY(student_id) references students(student_id);
