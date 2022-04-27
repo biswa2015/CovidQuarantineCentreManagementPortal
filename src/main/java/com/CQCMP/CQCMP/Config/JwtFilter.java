@@ -1,5 +1,5 @@
 package com.CQCMP.CQCMP.Config;
-/*
+
 import com.CQCMP.CQCMP.entity.*;
 import com.CQCMP.CQCMP.Services.*;
 import com.CQCMP.CQCMP.Services.JwtService;
@@ -46,4 +46,3 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request,response);
     }
 }
-*/
