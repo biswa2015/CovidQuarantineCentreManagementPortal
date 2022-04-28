@@ -44,11 +44,11 @@ public class CQCMPService {
     }
 
     public String loginAdmin(AuthRequest authRequest){
-        Admin admin=adminlogin_repo.getAdminByEmail(authRequest.getUsername());
+        Admin admin=adminlogin_repo.getAdminByEmail(authRequest.getEmail());
         if(admin!=null){
             boolean isMatch=authRequest.getPassword().equals(admin.getPassword());
             if(isMatch){
-                String token=jwtService.createToken(admin.getAdminID());
+                String token=jwtService.createToken(admin.getAdmin_ID());
                 return token;
             }
             else{

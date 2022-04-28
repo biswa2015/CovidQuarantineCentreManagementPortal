@@ -24,7 +24,7 @@ public class CQCMPController {
     private CQCMPService cqcmpService;
 
     @PostMapping(value = "/login-admin")
-    public ResponseEntity<?> loginPatient(@RequestBody AuthRequest authRequest){
+    public ResponseEntity<?> loginAdmin(@RequestBody AuthRequest authRequest){
         String msg= cqcmpService.loginAdmin(authRequest);
         if(msg==null){
             ResponseEntity<String> response=new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
@@ -33,8 +33,12 @@ public class CQCMPController {
         return ResponseEntity.ok(msg);
     }
 
+
     @PostMapping(value="/add-room")
     public ResponseEntity<?> addRoom(@RequestBody AddRoomDto addRoomDto){
+        //String adminToken=jwtService.extractID(token);
+//        if(adminToken==null)
+//            return ResponseEntity.ok("Not authorized");
         String msg= cqcmpService.addRoom(addRoomDto);
         if(msg==null){
             ResponseEntity<String> response=new ResponseEntity<>("Room already exists ",HttpStatus.INTERNAL_SERVER_ERROR);

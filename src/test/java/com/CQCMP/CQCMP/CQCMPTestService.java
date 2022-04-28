@@ -83,13 +83,13 @@ public class CQCMPTestService {
     public void testloginAdmin(){
         Admin admin=new Admin();
         admin.setName("admin");
-        admin.setAdminID("adminId");
+        admin.setAdmin_ID("adminId");
         admin.setPassword("password");
         Mockito.when(adminlogin_repo.getAdminByEmail(ArgumentMatchers.anyString())).thenReturn(admin);
         Mockito.when(jwtService.createToken(ArgumentMatchers.anyString())).thenReturn("token");
         AuthRequest authRequest=new AuthRequest();
         authRequest.setPassword("password");
-        authRequest.setUsername("Admin");
+        authRequest.setEmail("Admin");
         String res=service.loginAdmin(authRequest);
         Assertions.assertEquals("token",res);
 //        if(admin!=null){
