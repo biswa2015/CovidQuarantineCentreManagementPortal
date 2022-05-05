@@ -4,5 +4,16 @@
   connection: local
   remote_user: priyanko-ubuntu-20
   tasks:
-    - name: pull image
-      command: docker pull priyanko27/cqcmp:latest
+#    - name: pull image
+#      command: docker pull priyanko27/cqcmp:latest
+    - name: copy docker file
+      copy:
+        src: docker-compose.yml
+        dest: docker-compose.yml
+    - name: list files
+      shell:
+        cmd: ls
+    - name: dockercompose
+      docker_compose:
+        project_src: .
+        state: present
