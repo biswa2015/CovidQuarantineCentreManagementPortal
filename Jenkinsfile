@@ -43,7 +43,7 @@ pipeline {
                 sh 'docker logout'
             }
         }
-        stage('Pull image from docker hub & deploy'){
+        stage('Pull image & deploy'){
             steps {
                 ansiblePlaybook colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'playbook.yml'
             }
