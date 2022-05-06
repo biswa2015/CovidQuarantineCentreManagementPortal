@@ -22,9 +22,9 @@ services:
       - DB_SERVER=cqcmp-mysql
     ports:
       - 8102:8095
-    depends_on:
-      cqcmp-mysql:
-        condition: service_started
+#    depends_on:
+#      cqcmp-mysql:
+#        condition: service_started
 
   cqcmp-ui:
     image: "priyanko27/cqcmp_fe:latest"

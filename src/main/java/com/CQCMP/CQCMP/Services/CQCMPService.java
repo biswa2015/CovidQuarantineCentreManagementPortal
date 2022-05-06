@@ -212,6 +212,7 @@ public class CQCMPService {
     }
     public void triggerMail(String email){
 
+        System.out.println(email);
             javaMailSender.setPort(587);
             javaMailSender.setHost("smtp.gmail.com");
             javaMailSender.setUsername(myEmail);
@@ -228,12 +229,12 @@ public class CQCMPService {
             javaMailSender.send(mailMessage);
     }
 
-    public void sendEmail(){
-        List<Test> students=getPositiveStudents();
-        for(Test student:students){
-                String email=addMember_repo.getEmail(student.getStudent_id());
+    public void sendEmail(SendEmailDto sendEmailDto){
+//        List<Test> students=getPositiveStudents();
+//        for(Test student:students){
+        String studentID=sendEmailDto.getStudent_id();
+                String email=addMember_repo.getEmail(studentID);
                 triggerMail(email);
-
-        }
+       // }
     }
 }
