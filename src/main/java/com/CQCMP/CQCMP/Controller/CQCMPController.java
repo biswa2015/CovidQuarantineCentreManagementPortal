@@ -105,4 +105,10 @@ public class CQCMPController {
         List<Test> students= cqcmpService.getPositiveStudents();
         return ResponseEntity.ok(students);
     }
+
+    @PostMapping(value="/sendEmail")
+    public ResponseEntity<?> sendEmail(){
+        cqcmpService.sendEmail();
+        return ResponseEntity.ok("Email sent successfully");
+    }
 }

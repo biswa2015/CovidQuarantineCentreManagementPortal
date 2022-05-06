@@ -4,9 +4,13 @@ import com.CQCMP.CQCMP.Dto.*;
 import com.CQCMP.CQCMP.entity.*;
 import com.CQCMP.CQCMP.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import java.util.List;
+import java.util.Properties;
 
 @Service
 public class CQCMPService {
@@ -30,7 +34,16 @@ public class CQCMPService {
 
     @Autowired
     private allocateRoom_repo allocateroom_repo;
-    
+
+    private JavaMailSenderImpl javaMailSender=new JavaMailSenderImpl();
+
+    @Value("${sender.emailId}")
+    private String myEmail;
+
+    @Value("${sender.password}")
+    private String myPassword;
+
+
     public Admin getAdminById(String id){
         Admin res= adminlogin_repo.getAdminById(id);
         String msg;
@@ -196,5 +209,31 @@ public class CQCMPService {
     public long generateID(){
         long id=(long) Math.floor(Math.random()*9_000_000_000L)+1_000_000_000L;
         return id;
+    }
+    public void triggerMail(String email){
+
+            javaMailSender.setPort(587);
+            javaMailSender.setHost("smtp.gmail.com");
+            javaMailSender.setUsername(myEmail);
+            javaMailSender.setPassword(myPassword);
+            Properties properties=javaMailSender.getJavaMailProperties();
+            properties.put("mail.smtp.starttls.enable", "true");
+            properties.put("mail.smtp.auth", "true");
+            SimpleMailMessage mailMessage=new SimpleMailMessage();
+            mailMessage.setTo(email);
+            mailMessage.setSubject("Covid RTPCR Test Report Positive");
+            String text="\nHello," +"\nYour Covid RTPCR test result is positive.Please quarantine yourself";
+            mailMessage.setText(text);
+            mailMessage.setFrom(myEmail);
+            javaMailSender.send(mailMessage);
+    }
+
+    public void sendEmail(){
+        List<Test> students=getPositiveStudents();
+        for(Test student:students){
+                String email=addMember_repo.getEmail(student.getStudent_id());
+                triggerMail(email);
+
+        }
     }
 }
