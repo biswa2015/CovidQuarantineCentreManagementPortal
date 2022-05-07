@@ -5077,3 +5077,130 @@ This generated password is for development use only. Your security configuration
 07/May/2022:09:53:53 +0530 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 07/May/2022:09:53:53 +0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 07/May/2022:09:53:53 +0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+07/May/2022:11:10:39 +0530 [main] INFO  com.CQCMP.CQCMP.CqcmpApplication - Starting CqcmpApplication using Java 11.0.15 on priyanko-ubuntu with PID 13007 (/home/priyanko/CQCMP/target/classes started by priyanko in /home/priyanko/CQCMP)
+07/May/2022:11:10:39 +0530 [main] INFO  com.CQCMP.CQCMP.CqcmpApplication - No active profile set, falling back to 1 default profile: "default"
+07/May/2022:11:10:40 +0530 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+07/May/2022:11:10:40 +0530 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 6 JPA repository interfaces.
+07/May/2022:11:10:40 +0530 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8095 (http)
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.31] using APR version [1.7.0].
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8095"]
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+07/May/2022:11:10:40 +0530 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+07/May/2022:11:10:40 +0530 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 775 ms
+07/May/2022:11:10:40 +0530 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+07/May/2022:11:10:41 +0530 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+07/May/2022:11:10:41 +0530 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+07/May/2022:11:10:41 +0530 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.7.Final
+07/May/2022:11:10:41 +0530 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+07/May/2022:11:10:41 +0530 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+07/May/2022:11:10:41 +0530 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+07/May/2022:11:10:41 +0530 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+07/May/2022:11:10:41 +0530 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+07/May/2022:11:10:41 +0530 [main] WARN  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9a5ec9d0-1345-46cf-bb0e-c8a619dbc0ad
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+07/May/2022:11:10:41 +0530 [main] WARN  org.springframework.security.config.annotation.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/login-admin']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+07/May/2022:11:10:41 +0530 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure Ant [pattern='/login-admin'] with []
+07/May/2022:11:10:41 +0530 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+07/May/2022:11:10:41 +0530 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8095"]
+07/May/2022:11:10:41 +0530 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8095 (http) with context path ''
+07/May/2022:11:10:41 +0530 [main] INFO  com.CQCMP.CQCMP.CqcmpApplication - Started CqcmpApplication in 2.33 seconds (JVM running for 3.175)
+07/May/2022:11:11:25 +0530 [http-nio-8095-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+07/May/2022:11:11:25 +0530 [http-nio-8095-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+07/May/2022:11:11:25 +0530 [http-nio-8095-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+07/May/2022:11:11:25 +0530 [http-nio-8095-exec-2] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:11:25 +0530 [http-nio-8095-exec-2] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:11:44 +0530 [http-nio-8095-exec-4] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-FreeRooms] 
+07/May/2022:11:11:45 +0530 [http-nio-8095-exec-6] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Allocations] 
+07/May/2022:11:11:47 +0530 [http-nio-8095-exec-8] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Positive Students] 
+07/May/2022:11:16:15 +0530 [http-nio-8095-exec-1] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-FreeRooms] 
+07/May/2022:11:16:19 +0530 [http-nio-8095-exec-3] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Allocations] 
+07/May/2022:11:16:21 +0530 [http-nio-8095-exec-5] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-FreeRooms] 
+07/May/2022:11:18:41 +0530 [http-nio-8095-exec-8] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Allocations] 
+07/May/2022:11:18:44 +0530 [http-nio-8095-exec-10] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Positive Students] 
+07/May/2022:11:20:30 +0530 [http-nio-8095-exec-3] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:20:30 +0530 [http-nio-8095-exec-3] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:20:39 +0530 [http-nio-8095-exec-5] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-FreeRooms] 
+07/May/2022:11:20:42 +0530 [http-nio-8095-exec-7] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Allocations] 
+07/May/2022:11:20:45 +0530 [http-nio-8095-exec-9] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Positive Students] 
+07/May/2022:11:21:23 +0530 [http-nio-8095-exec-10] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:21:23 +0530 [http-nio-8095-exec-10] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:21:30 +0530 [http-nio-8095-exec-2] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Allocations] 
+07/May/2022:11:25:14 +0530 [http-nio-8095-exec-5] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:25:14 +0530 [http-nio-8095-exec-5] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:25:18 +0530 [http-nio-8095-exec-7] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Get-Allocations] 
+07/May/2022:11:27:03 +0530 [http-nio-8095-exec-9] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:27:03 +0530 [http-nio-8095-exec-9] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:27:56 +0530 [http-nio-8095-exec-10] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:27:56 +0530 [http-nio-8095-exec-10] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:28:20 +0530 [http-nio-8095-exec-2] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:235) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.CQCMP.CQCMP.Services.JwtService.extractID(JwtService.java:25) ~[classes/:?]
+	at com.CQCMP.CQCMP.Config.JwtFilter.doFilterInternal(JwtFilter.java:33) ~[classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.6.2.jar:5.6.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+07/May/2022:11:29:53 +0530 [http-nio-8095-exec-4] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] 
+07/May/2022:11:29:53 +0530 [http-nio-8095-exec-4] INFO  com.CQCMP.CQCMP.Controller.CQCMPController - [Admin-Login] - Successful
+07/May/2022:11:40:18 +0530 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+07/May/2022:11:40:18 +0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+07/May/2022:11:40:18 +0530 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
