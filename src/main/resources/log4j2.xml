@@ -4,12 +4,12 @@
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
         </Console>
-        <File name="FileAppender" fileName="CQCMP.log" immediateFlush="false" append="true">
+        <File name="FileAppender" fileName="CQCMPController.log" immediateFlush="true" append="true">
             <PatternLayout pattern="%d{dd/MMM/yyy:HH:mm:ss XX} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
     <Loggers>
-          <Root level="debug">
+          <Root level="info">
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender"/>
         </Root>
