@@ -243,7 +243,7 @@ public class CQCMPTestService {
 
         Mockito.when(getRooms_repo.getRooms(ArgumentMatchers.anyInt())).thenReturn(roomsList);
         List<Rooms> res=service.getRooms(1);
-        Assertions.assertEquals(2,roomsList.size());
+        Assertions.assertEquals(2,res.size());
         //List<Rooms> roomsList=getRooms_repo.getRooms(free);
         //return roomsList;
     }

@@ -13,7 +13,15 @@
     - name: list files
       shell:
         cmd: ls
-    - name: dockercompose
-      docker_compose:
-        project_src: .
-        state: present
+    - name: docker compose down
+      shell:
+        cmd: docker-compose down
+
+    - name: docker compose up
+        shell:
+          cmd: docker-compose up
+
+#    - name: dockercompose
+#      docker_compose:
+#        project_src: .
+#        state: present
