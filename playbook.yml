@@ -18,8 +18,8 @@
         cmd: docker-compose down
 
     - name: docker compose up
-        shell:
-          cmd: docker-compose up
+      shell:
+        cmd: docker-compose up
 
 #    - name: dockercompose
 #      docker_compose:
