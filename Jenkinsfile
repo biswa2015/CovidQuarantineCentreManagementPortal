@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-        DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-biswa')
+        imageName = ""
     }
 
     stages {
@@ -26,21 +26,18 @@ pipeline {
         }
         stage('Build image'){
              steps {
-                echo 'creating docker  image'
-                sh 'docker build -t cqcmp:latest .'
-                echo 'docker image created'
+                script{
+                     imageName = docker.build "biswa2015/cqcmp:latest"
+                 }
             }
         }
         stage('Push image to docker hub'){
             steps {
-                echo 'docker tag'
-                sh 'docker tag cqcmp biswa2015/cqcmp:latest'
-                echo 'docker login'
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                echo 'Pushing image to hub'
-                sh 'docker push biswa2015/cqcmp'
-                echo 'docker logout'
-                sh 'docker logout'
+                script{
+                    docker.withRegistry('', 'dockerhub-cred-biswa') {
+                       imageName.push()
+                    }
+                }
             }
         }
         stage('Pull image & deploy'){
