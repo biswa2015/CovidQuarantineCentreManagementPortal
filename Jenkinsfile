@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment{
-        DOCKERHUB_CREDENTIALS=credentials('docker-cred-biswa')
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-biswa')
     }
 
     stages {
