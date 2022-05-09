@@ -5,7 +5,7 @@ services:
     image: "mysql:latest"
     container_name: cqcmp-mysql
     volumes:
-      - /home/priyanko-ubuntu-20/Desktop/dockerCompose/init.sql:/docker-entrypoint-initdb.d/init-script.sql
+      - /home/biswad/Desktop/SPEMajor/init.sql:/docker-entrypoint-initdb.d/init-script.sql
       - mysql-data:/var/lib/mysql3/data
     ports:
       - 3307:3306
@@ -16,7 +16,7 @@ services:
       - MYSQL_ROOT_PASSWORD=password
 
   cqcmp-app:
-    image: "priyanko27/cqcmp:latest"
+    image: "biswa2015/cqcmp:latest"
     container_name: cqcmp-app
     environment:
       - DB_SERVER=cqcmp-mysql
@@ -27,7 +27,7 @@ services:
 #        condition: service_started
 
   cqcmp-ui:
-    image: "priyanko27/cqcmp_fe:latest"
+    image: "biswa2015/cqcmp_fe:latest"
     container_name: cqcmp-ui
     ports:
       - 4200:3000
